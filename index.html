@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Vozes da Periferia - Transformação Social</title>
+
+    <!-- ==================== FAVICON ==================== -->
+    <link rel="icon" href="./logo do site sem fundo.png"
+        style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+
+    <!-- ==================== OTIMIZAÇÕES DE PERFORMANCE ==================== -->
+
+
+    <!-- Pré-carregamento de recursos críticos -->
+    <link rel="preload" as="image" href="./b597265b-fa26-4f20-be46-7b3664a55581.jpg">
+    <link rel="preload" as="image" href="./pequeno-edificio-perto-um-outro-em-uma-colina2.jpg">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+        as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+
+    <!-- Pré-busca DNS para imagens externas -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://www.findup.com.br">
+    <link rel="dns-prefetch" href="https://internationalschool.global">
+    <link rel="dns-prefetch" href="https://img.freepik.com">
+    <link rel="dns-prefetch" href="https://vocesa.abril.com.br">
+    <link rel="dns-prefetch" href="https://estanciadecorrs.com.br">
+
+    <!-- ==================== FONTES E ESTILOS ==================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== EFEITO HOLOFOTE ==================== -->
+    <div id="spotlight"></div>
+
+    <!-- ==================== TELA DE CARREGAMENTO ==================== -->
+    <div class="loading-screen" id="loadingScreen">
+        <!-- Fundos decorativos -->
+        <div class="loading-bg-texture"></div>
+        <div class="grid-pattern"></div>
+        <div class="loading-overlay"></div>
+
+        <!-- Partículas animadas -->
+        <div id="particlesContainer"></div>
+
+        <!-- Conteúdo principal -->
+        <div class="loading-content">
+            <div class="logo-container">
+                <div class="circle-decoration"></div>
+                <img class="loading-logo" src="./logo do site sem fundo.png" alt="Vozes da Periferia"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http:'//www.w3.org/2000/svg%22 width=%22180%22 height=%22180%22%3E%3Ccircle cx=%2290%22 cy=%2290%22 r=%2288%22 fill=%22%23FF8800%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2250%22 font-weight=%22700%22 fill=%22white%22 font-family=%22Arial%22%3EVP%3C/text%3E%3C/svg%3E'">
+            </div>
+
+            <div class="loading-text-container">
+                <h1 class="loading-title">Vozes da Periferia</h1>
+
+                <p class="loading-subtitle">
+                    Carregando
+                    <span class="loading-dots">
+                        <span>.</span><span>.</span><span>.</span>
+                    </span>
+                </p>
+
+                <div class="progress-section">
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+
+                    <div class="progress-info">
+                        <span class="progress-percent" id="progressPercent">0%</span>
+                        <span class="progress-status" id="progressStatus">Inicializando</span>
+                    </div>
+                </div>
+
+                <p class="loading-message" id="loadingMessage">
+                    Preparando uma experiência de transformação social através da educação e cultura.
+                </p>
+            </div>
+        </div>
+
+        <!-- Marca institucional -->
+        <div class="brand-mark">
+            <span class="brand-tagline">Educação • Cultura • Transformação</span>
+            <span class="brand-year">© 2026 Vozes da Periferia</span>
+        </div>
+    </div>
+
+    <!-- ==================== GRADIENTE DE FUNDO ==================== -->
+    <div class="bg-gradient"></div>
+
+    <!-- ==================== NAVEGAÇÃO ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <img class="nav-img" src="./logo do site sem fundo.png" alt="Logo Vozes da Periferia">
+            </div>
+
+            <!-- Botão hambúrguer (mobile) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Container direito: Menu + Seletor de idiomas -->
+            <div class="nav-right">
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" data-i18n="navHome">Início</a></li>
+                    <li><a href="#fundadores" data-i18n="navFounders">Fundadores</a></li>
+                    <li><a href="#quem-somos" data-i18n="navWhoWeAre">Quem Somos</a></li>
+                    <li><a href="#objetivo" data-i18n="navObjective">Objetivo</a></li>
+                    <li><a href="#oficinas" data-i18n="navWorkshops">Oficinas</a></li>
+                    <li><a href="#galeria" data-i18n="navGallery">Galeria</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-i18n="navMyAccount">Minha Conta</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="formulario.php" data-i18n="navRegister">Se Inscreva</a></li>
+                            <li><a href="login.php" data-i18n="navLogin">Login</a></li>
+                            <li><a href="perfil.php" data-i18n="navProfile">Perfil</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#redesSociais" class="nav-cta" data-i18n="navContact">Contato</a></li>
+                    <li class="nav-language-mobile">
+                        <button class="language-btn-mobile" id="languageBtnMobile" aria-label="Selecionar idioma">
+                            <span class="flag" id="currentFlagMobile">🇧🇷</span>
+                            <span class="lang-text" data-i18n="navLanguage">Idioma</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="language-dropdown-mobile" id="languageDropdownMobile">
+                            <div class="language-option" data-lang="pt">
+                                <span class="flag">🇧🇷</span>
+                                <span class="name">Português</span>
+                            </div>
+                            <div class="language-option" data-lang="en">
+                                <span class="flag">🇺🇸</span>
+                                <span class="name">English</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Seletor de idiomas (desktop) -->
+                <div class="language-selector language-selector-desktop">
+                    <button class="language-btn" id="languageBtn" aria-label="Selecionar idioma">
+                        <span class="flag" id="currentFlag">🇧🇷</span>
+                        <span class="lang-text" id="currentLang">Português</span>
+                    </button>
+
+                    <div class="language-dropdown" id="languageDropdown">
+                        <div class="language-option selected" data-lang="pt">
+                            <span class="flag">🇧🇷</span>
+                            <span class="name">Português</span>
+                        </div>
+                        <div class="language-option" data-lang="en">
+                            <span class="flag">🇺🇸</span>
+                            <span class="name">English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ==================== BOTÃO FLUTUANTE DE MÚSICA ==================== -->
+
+    <div class="mplayer" id="mplayer">
+
+        <button class="mplayer-btn" id="mplayerBtn" aria-label="Tocar música">
+            <div class="mplayer-vinyl">
+                <div class="mplayer-hole"></div>
+            </div>
+            <div class="mplayer-waves">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </button>
+
+        <div class="mplayer-panel" id="mplayerPanel">
+            <div class="mplayer-header">
+                <div class="mplayer-info">
+                    <span class="mplayer-dot" id="mplayerDot"></span>
+                    <div>
+                        <strong id="mplayerStatus">Clique ▶ para tocar</strong>
+                        <span>Baby - Faygo · Vozes da Periferia</span>
+                    </div>
+                </div>
+                <button class="mplayer-x" id="mplayerClose">✕</button>
+            </div>
+
+            <div class="mplayer-controls">
+                <button class="mplayer-ctrl" id="mplayerPlayBtn">
+                    <svg id="iconPlay" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <polygon points="5,3 19,12 5,21" />
+                    </svg>
+                    <svg id="iconPause" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"
+                        style="display:none">
+                        <rect x="6" y="4" width="4" height="16" />
+                        <rect x="14" y="4" width="4" height="16" />
+                    </svg>
+                </button>
+                <div class="mplayer-seek-wrap">
+                    <span class="mplayer-time" id="mplayerCurrentTime">0:00</span>
+                    <input type="range" class="mplayer-seek" id="mplayerSeek" min="0" max="100" step="0.1" value="0">
+                    <span class="mplayer-time" id="mplayerDuration">0:00</span>
+                </div>
+            </div>
+
+            <div class="mplayer-bpm-wrap">
+                <span class="mplayer-bpm-label">Velocidade</span>
+                <div class="mplayer-bpm-btns">
+                    <button class="mplayer-bpm-btn" id="bpmSlow"> Lento</button>
+                    <button class="mplayer-bpm-btn active" id="bpmNormal"> Normal</button>
+                    <button class="mplayer-bpm-btn" id="bpmFast"> Rápido</button>
+                </div>
+                <span class="mplayer-bpm-val" id="bpmVal">Normal</span>
+            </div>
+
+            <div class="mplayer-credit">🎵 Baby - Faygo · Vozes da Periferia</div>
+        </div>
+    </div>
+
+
+    <!-- Sobreposição do menu (mobile) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ==================== CABEÇALHO / HERO ==================== -->
+    <header id="home">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>PROJETO VOZES DA PERIFERIA</h1>
+                <div class="subtitle1">Pão dos Pobres</div>
+                <p class="header-description">
+                    Um movimento de jovens comprometidos com a transformação social através da educação, cultura e
+                    oportunidades.
+                </p>
+            </div>
+            <div class="header-image">
+                <img src="./logo do site sem fundo.png" alt="Jovens da comunidade">
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== SEÇÃO FUNDADORES ==================== -->
+    <style>
+        .swiper-slide {
+            perspective: 1000px;
+            cursor: pointer;
+            background: transparent !important;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 380px;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .swiper-slide.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            gap: 14px;
+        }
+
+        .founder-name-back {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .social-subtitle {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 210px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .social-link:hover {
+            transform: scale(1.06);
+            filter: brightness(1.2);
+        }
+
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-link.youtube {
+            background: #FF0000;
+        }
+
+        .social-link.spotify {
+            background: #1DB954;
+        }
+
+        .social-link.linkedin {
+            background: #0077B5;
+        }
+
+        .flip-hint {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 6px;
+        }
+
+        /* SETA PULSANDO */
+        .flip-btn {
+            margin-top: 12px;
+            background: none;
+            border: 2px solid #232a26;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: pulse-btn 1.5s ease-in-out infinite;
+            color: #1DB954;
+        }
+
+        .flip-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @keyframes pulse-btn {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.6);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 10px rgba(29, 185, 84, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(29, 185, 84, 0);
+            }
+        }
+    </style>
+
+
+    <section class="fundadores-section" id="fundadores">
+        <h2>Fundadores</h2>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <!-- Fundador 1: Eicon Gustavo -->
+                <div class="swiper-slide" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./foto do eicon.jpeg" class="testimonial-img" alt="Foto de Eicon Gustavo">
+                            <p class="testimonial-text">
+                                Fundador e um dos idealizadores do projeto, responsável por definir a estratégia e pela
+                                condução das rodas de conversa.
+                            </p>
+                            <div class="author-info">
+                                <p class="author-name">Eicon Gustavo</p>
+                                <p class="author-role">Fundador</p>
+                            </div>
+                            <button class="flip-btn" title="Ver redes sociais">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="founder-name-back">Eicon Gustavo</p>
+                            <p class="social-subtitle">Redes Sociais</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/oeicon_?igsh=cHp5MThxbTU3M2Z3" target="_blank"
+                                    class="social-link instagram">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://www.youtube.com/@VozesDaperiferiars" target="_blank"
+                                    class="social-link youtube">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </div>
+                            <span class="flip-hint">↺ clique para voltar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fundador 2: Guilherme Martins -->
+                <div class="swiper-slide" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./foto do gui.jpeg" class="testimonial-img" alt="Foto de Guilherme Martins">
+                            <p class="testimonial-text">
+                                Fundador, responsável pela organização, gestão de colaboradores e direção criativa do
+                                projeto.
+                            </p>
+                            <div class="author-info">
+                                <p class="author-name">Guilherme Martins</p>
+                                <p class="author-role">Fundador</p>
+                            </div>
+                            <button class="flip-btn" title="Ver redes sociais">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="founder-name-back">Guilherme Martins</p>
+                            <p class="social-subtitle">Redes Sociais</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/luis_da_siilva?igsh=MW12MHQwc3J3c2IyMw==" target="_blank"
+                                    class="social-link instagram">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://www.youtube.com/@VozesDaperiferiars" target="_blank"
+                                    class="social-link youtube">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </div>
+                            <span class="flip-hint">↺ clique para voltar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fundador 3: Luis da Silva -->
+                <div class="swiper-slide" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./foto do luis.jpeg" class="testimonial-img" alt="Foto de Luis da Silva">
+                            <p class="testimonial-text">
+                                Estratégia e comunicação para levar nossa representatividade a empresas e escolas,
+                                gerando impacto e transformação real.
+                            </p>
+                            <div class="author-info">
+                                <p class="author-name">Luis da Silva</p>
+                                <p class="author-role">Fundador</p>
+                            </div>
+                            <button class="flip-btn" title="Ver redes sociais">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="founder-name-back">Luis da Silva</p>
+                            <p class="social-subtitle">Redes Sociais</p>
+                            <div class="social-links">
+                                <a href="https://instagram.com/PERFIL_LUIS" target="_blank"
+                                    class="social-link instagram">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                                <a href="https://www.youtube.com/@VozesDaperiferiars" target="_blank"
+                                    class="social-link youtube">
+                                    <i class="fab fa-youtube"></i> YouTube
+                                </a>
+                            </div>
+                            <span class="flip-hint">↺ clique para voltar</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SEÇÃO QUEM SOMOS ==================== -->
+    <section class="section" id="quem-somos">
+        <div class="container">
+            <h2 class="scroll-reveal">Quem Somos</h2>
+
+            <div class="objective-box scroll-reveal">
+                <p>
+                    Somos um movimento impulsionado por jovens negros e periféricos, focado em levar educação,
+                    cultura e empregabilidade para dentro das escolas e do mundo corporativo. Mais do que apenas estar
+                    lá,
+                    atuamos como uma ponte estratégica entre a potência criativa da quebrada e as demandas do mercado.
+                    Usamos nossa identidade e a cultura de rua como ferramentas de inovação, transformando realidades e
+                    criando novas perspectivas de futuro.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SEÇÃO PARALLAX ==================== -->
+    <section class="parallax-section">
+        <div class="parallax-bg"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h3 class="parallax-title">Juntos Construímos o Futuro</h3>
+            <p class="parallax-text">Inovação, dedicação e trabalho em equipe</p>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO OBJETIVO ==================== -->
+    <section class="section" id="objetivo">
+        <div class="container">
+            <h2 class="scroll-reveal">Nosso Objetivo</h2>
+
+            <div class="objective-box scroll-reveal">
+                <p>
+                    Nosso objetivo é levar aprendizado e representatividade negra periférica para escolas,
+                    comunidades e o mercado de trabalho, conscientizando jovens na luta contra o racismo.
+                    Criamos pontes de oportunidades reais através da educação, cultura e tecnologia. Queremos formar
+                    novos líderes orgulhosos de sua identidade, prontos para transformar suas realidades e ocupar
+                    espaços de poder e decisão com protagonismo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO OFICINAS E ATIVIDADES ==================== -->
+    <section class="section" id="oficinas">
+        <div class="container">
+            <h2 class="scroll-reveal">Oficinas e Atividades</h2>
+
+            <!-- Grid para Desktop -->
+            <div class="oficinas-grid-desktop scroll-reveal">
+
+                <!-- Oficina 1: Manutenção de Computadores -->
+                <div class="oficina-card-item">
+                    <img src="./Manutenção de Computadores.jpg" alt="Manutenção de Computadores" class="oficina-img">
+                    <div class="oficina-overlay"></div>
+                    <div class="oficina-content">
+                        <div class="oficina-header">
+                            <div class="oficina-number">01</div>
+                            <div class="oficina-icon">💻</div>
+                        </div>
+                        <h3 class="oficina-title">Manutenção de Computadores</h3>
+                        <p class="oficina-description">
+                            Do zero ao profissional: aprenda montagem, manutenção e diagnóstico de computadores.
+                            Habilidades práticas que abrem portas no mercado de tecnologia e geram oportunidades reais
+                            de trabalho e renda.
+                        </p>
+                        <div class="oficina-tags">
+                            <span class="oficina-tag">Hardware</span>
+                            <span class="oficina-tag">Software</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oficina 2: Tecnologia Inclusiva -->
+                <div class="oficina-card-item">
+                    <img src="./Tecnologia Inclusiva.jpg" alt="Tecnologia Inclusiva" class="oficina-img">
+                    <div class="oficina-overlay"></div>
+                    <div class="oficina-content">
+                        <div class="oficina-header">
+                            <div class="oficina-number">02</div>
+                            <div class="oficina-icon">🌐</div>
+                        </div>
+                        <h3 class="oficina-title">Tecnologia Inclusiva</h3>
+                        <p class="oficina-description">
+                            Quebrando barreiras digitais levamos tecnologia e inclusão para quem mais precisa.
+                            Capacitação prática em informática que transforma vidas e abre portas para o mundo digital e
+                            suas oportunidades.
+                        </p>
+                        <div class="oficina-tags">
+                            <span class="oficina-tag">Inclusão</span>
+                            <span class="oficina-tag">Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oficina 3: Raízes Afro-Gaúchas -->
+                <div class="oficina-card-item">
+                    <img src="./Raízes Afro-Gaúchas.png" alt="Cultura Negra Gaúcha" class="oficina-img">
+                    <div class="oficina-overlay"></div>
+                    <div class="oficina-content">
+                        <div class="oficina-header">
+                            <div class="oficina-number">03</div>
+                            <div class="oficina-icon">✊🏿</div>
+                        </div>
+                        <h3 class="oficina-title">Raízes Afro-Gaúchas</h3>
+                        <p class="oficina-description">
+                            Resgate e celebração da cultura afro-gaúcha: reconectamos com nossas raízes, fortalecemos
+                            identidades e promovemos orgulho negro.
+                            Conhecimento ancestral que empodera e transforma nossa relação com história e pertencimento.
+                        </p>
+                        <div class="oficina-tags">
+                            <span class="oficina-tag">Cultura</span>
+                            <span class="oficina-tag">Raízes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oficina 4: Hip Hop é Resistência -->
+                <div class="oficina-card-item">
+                    <img src="./Hip Hop é Resistência.jpg" alt="Movimento Hip Hop" class="oficina-img">
+                    <div class="oficina-overlay"></div>
+                    <div class="oficina-content">
+                        <div class="oficina-header">
+                            <div class="oficina-number">04</div>
+                            <div class="oficina-icon">🎤</div>
+                        </div>
+                        <h3 class="oficina-title">Hip Hop é Resistência</h3>
+                        <p class="oficina-description">
+                            Hip Hop como ferramenta de transformação: damos voz, empoderamos e revolucionamos a
+                            juventude periférica.
+                            Arte, cultura e resistência que constroem identidade, autoestima e abrem caminhos para
+                            expressão e protagonismo social.
+                        </p>
+                        <div class="oficina-tags">
+                            <span class="oficina-tag">Arte</span>
+                            <span class="oficina-tag">Voz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oficina 5: Diálogos que Mudam -->
+                <div class="oficina-card-item">
+                    <img src="./roda conversa.png" alt="Rodas de Conversa" class="oficina-img">
+                    <div class="oficina-overlay"></div>
+                    <div class="oficina-content">
+                        <div class="oficina-header">
+                            <div class="oficina-number">05</div>
+                            <div class="oficina-icon">💬</div>
+                        </div>
+                        <h3 class="oficina-title">Diálogos que Mudam</h3>
+                        <p class="oficina-description">
+                            Escuta ativa e troca de vivências: construímos soluções coletivas através do diálogo.
+                            Rodas de conversa que fortalecem vínculos, compartilham experiências e criam caminhos reais
+                            para um futuro mais justo e transformador.
+                        </p>
+                        <div class="oficina-tags">
+                            <span class="oficina-tag">Diálogo</span>
+                            <span class="oficina-tag">União</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oficina 6: Gerações Conectadas -->
+                <div class="oficina-card-item">
+                    <img src="./Gerações Conectadas.jpg" alt="Inclusão Digital Sênior" class="oficina-img">
+                    <div class="oficina-overlay"></div>
+                    <div class="oficina-content">
+                        <div class="oficina-header">
+                            <div class="oficina-number">06</div>
+                            <div class="oficina-icon">👴🏿</div>
+                        </div>
+                        <h3 class="oficina-title">Gerações Conectadas</h3>
+                        <p class="oficina-description">
+                            Unindo gerações através da tecnologia: ensinamos idosos a navegar no mundo digital com
+                            respeito e paciência.
+                            Inclusão digital que valoriza sabedoria, fortalece vínculos familiares e conecta corações
+                            através das telas e aplicativos.
+                        </p>
+                        <div class="oficina-tags">
+                            <span class="oficina-tag">Gerações</span>
+                            <span class="oficina-tag">Respeito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrossel para Mobile -->
+            <div class="oficinas-carousel-mobile scroll-reveal">
+                <div class="oficinas-slide">
+
+                    <div class="oficinas-item" style="background-image: url(./Manutenção\ de\ Computadores.jpg);">
+                        <div class="oficinas-item-content">
+                            <div class="oficinas-item-name">Manutenção de computadores</div>
+                            <div class="oficinas-item-desc">
+                                Do zero ao profissional: aprenda montagem, manutenção e diagnóstico de computadores.
+                                Habilidades práticas que abrem portas no mercado de tecnologia.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="oficinas-item" style="background-image: url(./Tecnologia\ Inclusiva.jpg);">
+                        <div class="oficinas-item-content">
+                            <div class="oficinas-item-name">Tecnologia Inclusiva</div>
+                            <div class="oficinas-item-desc">
+                                Do zero ao profissional: aprenda montagem, manutenção e diagnóstico de computadores.
+                                Habilidades práticas que abrem portas no mercado de tecnologia e geram oportunidades
+                                reais
+                                de trabalho e renda.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="oficinas-item" style="background-image: url(./Raízes\ Afro-Gaúchas.png);">
+                        <div class="oficinas-item-content">
+                            <div class="oficinas-item-name">Raízes Afro-Gaúchas</div>
+                            <div class="oficinas-item-desc">
+                                Resgate e celebração da cultura afro-gaúcha: reconectamos com nossas raízes,
+                                fortalecemos
+                                identidades e promovemos orgulho negro.
+                                Conhecimento ancestral que empodera e transforma nossa relação com história e
+                                pertencimento.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="oficinas-item" style="background-image: url(./Hip\ Hop\ é\ Resistência.jpg);">
+                        <div class="oficinas-item-content">
+                            <div class="oficinas-item-name">Hip Hop é Resistência</div>
+                            <div class="oficinas-item-desc">
+                                Hip Hop como ferramenta de transformação: damos voz, empoderamos e revolucionamos a
+                                juventude periférica.
+                                Arte, cultura e resistência que constroem identidade, autoestima e abrem caminhos para
+                                expressão e protagonismo social.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="oficinas-item" style="background-image: url(./roda\ conversa.png);">
+                        <div class="oficinas-item-content">
+                            <div class="oficinas-item-name">Diálogos que Mudam</div>
+                            <div class="oficinas-item-desc">
+                                Escuta ativa e troca de vivências: construímos soluções coletivas através do diálogo.
+                                Rodas de conversa que fortalecem vínculos, compartilham experiências e criam caminhos
+                                reais
+                                para um futuro mais justo e transformador.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="oficinas-item" style="background-image: url(./Gerações\ Conectadas.jpg);">
+                        <div class="oficinas-item-content">
+                            <div class="oficinas-item-name">Gerações Conectadas</div>
+                            <div class="oficinas-item-desc">
+                                Unindo gerações através da tecnologia: ensinamos idosos a navegar no mundo digital com
+                                respeito e paciência.
+                                Inclusão digital que valoriza sabedoria, fortalece vínculos familiares e conecta
+                                corações
+                                através das telas e aplicativos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de navegação do carrossel -->
+                <div class="oficinas-buttons">
+                    <button class="oficinas-prev" aria-label="Oficina anterior">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="oficinas-next" aria-label="Próxima oficina">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO PARCEIROS ==================== -->
+    <!-- <section class="section" id="parceiros">
+        <div class="container scroll-reveal">
+            <h2>Parceiros e Colaboradores</h2>
+
+            <div class="collaborators-grid scroll-reveal"> -->
+
+
+    <!-- Parceiro 4: Pão dos Pobres -->
+    <!-- <div class="collab-card" data-partner="4">
+                    <img src="https://estanciadecorrs.com.br/wp-content/uploads/2023/08/Fachada-restaurada-da-Fundacao-Pao-dos-Pobres-credito-Jose-Carlos-Andrade-002-scaled.jpg"
+                        alt="Fundação Pão dos Pobres" class="collab-bg">
+                    <div class="collab-overlay"></div>
+                    <div class="shine-effect"></div>
+                    <div class="collab-content">
+                        <div class="collab-header">
+                            <div class="collab-badge">01</div>
+                            <div class="collab-icon">🤝</div>
+                        </div>
+                        <div class="collab-info">
+                            <div class="collab-name">Pão dos Pobres</div>
+                            <div class="collab-description">
+                                A Fundação O Pão dos Pobres de Santo Antônio é uma instituição centenária e referência
+                                em assistência social e educação profissional em Porto Alegre. Fundada em 1895, ela atua
+                                na linha de frente da transformação social, oferecendo acolhimento, proteção e,
+                                principalmente, cursos de aprendizagem profissional para jovens em situação de
+                                vulnerabilidade.
+                            </div>
+                        </div> -->
+    <!-- <div class="collab-actions">
+                            <button class="collab-btn" onclick="toggleInfo(4)">
+                                <span class="btn-text">Ver Mais</span>
+                                <span class="arrow">↓</span>
+                            </button>
+                            <a href="https://www.instagram.com/fundacaopaodospobres/" target="_blank"
+                                rel="noopener noreferrer" class="collab-link-btn">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div> -->
+
+    <!-- Parceiro 1: Projeto Aruanda -->
+    <!-- <div class="collab-card" data-partner="1">
+                    <img src="./aruanda.png" alt="Projeto Aruanda" class="collab-bg">
+                    <div class="collab-overlay"></div>
+                    <div class="shine-effect"></div>
+                    <div class="collab-content">
+                        <div class="collab-header">
+                            <div class="collab-badge">01</div>
+                            <div class="collab-icon">🎙️</div>
+                        </div>
+                        <div class="collab-info">
+                            <div class="collab-name">Projeto Aruanda</div>
+                            <div class="collab-description">
+                                O Aruanda é um projeto de estratégia e comunicação que atua como ponte entre a
+                                representatividade e os espaços de decisão. Ele transforma a presença negra e periférica
+                                em impacto real, levando vozes e narrativas de transformação para dentro de empresas e
+                                salas de aula para mudar as instituições por dentro.
+                            </div>
+                        </div>
+                        <div class="collab-actions">
+                            <button class="collab-btn" onclick="toggleInfo(1)">
+                                <span class="btn-text">Ver Mais</span>
+                                <span class="arrow">↓</span>
+                            </button>
+                            <a href="https://www.instagram.com/projetoaruandafeevale?igsh=MXVtdTB6eHhrMTU3NA=="
+                                target="_blank" rel="noopener noreferrer" class="collab-link-btn">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div> -->
+
+    <!-- Parceiro 2: Museu do Hip Hop -->
+    <!-- <div class="collab-card" data-partner="2">
+                    <img src="./museu do rip hop.png" alt="Museu Hip Hop" class="collab-bg">
+                    <div class="collab-overlay"></div>
+                    <div class="shine-effect"></div>
+                    <div class="collab-content">
+                        <div class="collab-header">
+                            <div class="collab-badge">02</div>
+                            <div class="collab-icon">🏛️</div>
+                        </div>
+                        <div class="collab-info">
+                            <div class="collab-name">Museu do Hip Hop</div>
+                            <div class="collab-description">
+                                Preservando e celebrando a história do Hip Hop gaúcho. Um espaço cultural dedicado a
+                                documentar a trajetória do movimento no Rio Grande do Sul, valorizando artistas locais e
+                                promovendo a cultura periférica como patrimônio cultural legítimo e transformador.
+                            </div>
+                        </div>
+                        <div class="collab-actions">
+                            <button class="collab-btn" onclick="toggleInfo(2)">
+                                <span class="btn-text">Ver Mais</span>
+                                <span class="arrow">↓</span>
+                            </button>
+                            <a href="https://www.instagram.com/museuhiphoprs/" target="_blank" rel="noopener noreferrer"
+                                class="collab-link-btn">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div> -->
+
+    <!-- Parceiro 3: Rodrigo Sabiah -->
+    <!-- <div class="collab-card" data-partner="3">
+                    <img src="./rodrigo sabiah.png" alt="Rodrigo Sabiah" class="collab-bg">
+                    <div class="collab-overlay"></div>
+                    <div class="shine-effect"></div>
+                    <div class="collab-content">
+                        <div class="collab-header">
+                            <div class="collab-badge">03</div>
+                            <div class="collab-icon">🎤</div>
+                        </div>
+                        <div class="collab-info">
+                            <div class="collab-name">Rodrigo Sabiah</div>
+                            <div class="collab-description">
+                                Artista, ativista e produtor cultural comprometido com a democratização da arte
+                                periférica.
+                                Através de projetos inovadores, Rodrigo Sabiah trabalha pela valorização da produção
+                                cultural
+                                das comunidades, criando pontes entre periferia e centro na luta por reconhecimento e
+                                representatividade.
+                            </div>
+                        </div>
+                        <div class="collab-actions">
+                            <button class="collab-btn" onclick="toggleInfo(3)">
+                                <span class="btn-text">Ver Mais</span>
+                                <span class="arrow">↓</span>
+                            </button>
+                            <a href="https://www.instagram.com/rodrigosabiah/" target="_blank" rel="noopener noreferrer"
+                                class="collab-link-btn">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div> -->
+
+
+    <!-- </div>
+        </div>
+    </section> -->
+
+
+
+    <section class="c3d-section" id="galeria">
+
+        <h3 class="c3d-heading">NOSSA <span>GALERIA</span></h3>
+        <p class="c3d-sub">MOMENTOS QUE CONTAM A NOSSA HISTÓRIA</p>
+
+        <div class="c3d-scene">
+            <div class="c3d-track" id="c3dTrack"></div>
+        </div>
+
+        <div class="c3d-glow"></div>
+
+        <div class="c3d-count">
+            <span class="c3d-cur" id="c3dCur">01</span> / <span id="c3dTotal">13</span>
+        </div>
+
+        <div class="c3d-dots" id="c3dDots"></div>
+
+        <div class="c3d-controls">
+            <button class="c3d-btn" id="c3dPrev">← <span class="c3d-lbl">ANTERIOR</span></button>
+            <button class="c3d-btn c3d-btn-play" id="c3dPlay">⏸ <span class="c3d-lbl">PAUSAR</span></button>
+            <button class="c3d-btn" id="c3dNext"><span class="c3d-lbl">PRÓXIMO</span> →</button>
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================== SEÇÃO: BATIDA LIVRE (JOGO HIP HOP) ==================== -->
+
+    <section class="batida-section" id="batida-livre">
+
+        <!-- Cabeçalho da seção, no estilo do site -->
+        <div class="container">
+            <div class="batida-intro scroll-reveal">
+
+                <h3 class="c3d-heading">BATIDA <span>LIVRE</span></h3>
+                <div class="batida-eyebrow">🎮 Mini-Jogo Educativo</div>
+                <p class="batida-desc">
+                    20 fases. 20 histórias reais do hip hop brasileiro e mundial.<br>
+                    Siga o ritmo, acerte as notas e aprenda a cultura que nos une.
+                </p>
+            </div>
+        </div>
+
+        <!-- Container do jogo -->
+        <div class="batida-wrapper scroll-reveal">
+            <div class="batida-frame-outer">
+
+
+
+                <!-- O jogo inteiro fica dentro deste div -->
+                <div class="batida-game-root" id="batidaGameRoot">
+
+                    <!-- ══════════════ FONTES INTERNAS DO JOGO ══════════════ -->
+
+
+                    <!-- ══ TELA INTRO ══ -->
+                    <div class="bg-screen" id="bgScreenIntro">
+                        <div class="bg-eyebrow">Vozes da Periferia · 2026</div>
+                        <div class="bg-logo">
+                            <span class="l1">BATIDA</span>
+                            <span class="l2">LIVRE</span>
+                        </div>
+                        <p class="bg-desc">20 fases · 20 histórias reais do hip hop.<br>Siga o ritmo e aprenda a
+                            cultura.</p>
+
+                        <div class="bg-keys-row">
+                            <div class="bg-kp">
+                                <div class="bg-kp-pad">🎨</div>
+                                <div class="bg-kp-label">D / ←</div>
+                            </div>
+                            <div class="bg-kp">
+                                <div class="bg-kp-pad">🎤</div>
+                                <div class="bg-kp-label">F / ↓</div>
+                            </div>
+                            <div class="bg-kp">
+                                <div class="bg-kp-pad">🧢</div>
+                                <div class="bg-kp-label">J / ↑</div>
+                            </div>
+                            <div class="bg-kp">
+                                <div class="bg-kp-pad">🎧</div>
+                                <div class="bg-kp-label">K / →</div>
+                            </div>
+                        </div>
+                        <div class="bg-diff-row">
+                            <button class="bg-diff-btn active" data-bgdiff="easy">FÁCIL</button>
+                            <button class="bg-diff-btn" data-bgdiff="normal">NORMAL</button>
+                            <button class="bg-diff-btn" data-bgdiff="hard">DIFÍCIL</button>
+                        </div>
+                        <button class="bg-btn-start" id="bgBtnStart">▶ JOGAR</button>
+                    </div>
+
+                    <!-- ══ TELA GAME ══ -->
+                    <div class="bg-screen off" id="bgScreenGame">
+                        <div id="bgHud">
+                            <div class="bg-hud-block"><span class="bg-hud-label">Pontos</span><span class="bg-hud-val o"
+                                    id="bgHudScore">0</span></div>
+                            <div class="bg-hud-block"><span class="bg-hud-label">Combo</span><span class="bg-hud-val g"
+                                    id="bgHudCombo">×0</span></div>
+                            <div class="bg-hud-block"><span class="bg-hud-label">Fase</span><span class="bg-hud-val p"
+                                    id="bgHudRound">1/20</span></div>
+                            <div class="bg-hud-block"><span class="bg-hud-label">Precisão</span><span
+                                    class="bg-hud-val c" id="bgHudAcc">—</span></div>
+
+                        </div>
+                        <div id="bgProgressBar">
+                            <div id="bgProgressFill"></div>
+                        </div>
+                        <div id="bgComboBar">
+                            <div id="bgComboFill"></div>
+                        </div>
+                        <div id="bgStage">
+                            <div class="bg-lane-line" style="left:25%"></div>
+                            <div class="bg-lane-line" style="left:50%"></div>
+                            <div class="bg-lane-line" style="left:75%"></div>
+                            <div id="bgHitLine"></div>
+                            <div id="bgHitZone">
+                                <div class="bg-hz" id="bghz0"></div>
+                                <div class="bg-hz" id="bghz1"></div>
+                                <div class="bg-hz" id="bghz2"></div>
+                                <div class="bg-hz" id="bghz3"></div>
+                            </div>
+                            <div id="bgJudge"></div>
+                            <canvas id="bgParticleCanvas"></canvas>
+                        </div>
+                        <div id="bgButtons">
+                            <button class="bg-hit-btn" data-bglane="0"><span class="bg-hit-icon">🎨</span><span
+                                    class="bg-hit-key">D</span></button>
+                            <button class="bg-hit-btn" data-bglane="1"><span class="bg-hit-icon">🎤</span><span
+                                    class="bg-hit-key">F</span></button>
+                            <button class="bg-hit-btn" data-bglane="2"><span class="bg-hit-icon">🧢</span><span
+                                    class="bg-hit-key">J</span></button>
+                            <button class="bg-hit-btn" data-bglane="3"><span class="bg-hit-icon">🎧</span><span
+                                    class="bg-hit-key">K</span></button>
+                        </div>
+                    </div>
+
+                    <!-- ══ TELA MESSAGE ══ -->
+                    <div class="bg-screen off" id="bgScreenMessage">
+                        <div class="bg-msg-inner">
+                            <div class="bg-msg-header">
+                                <div class="bg-msg-badge" id="bgMsgBadge">FASE 1 COMPLETA</div>
+                                <div class="bg-msg-prog" id="bgMsgProg">1 / 20</div>
+                            </div>
+                            <div class="bg-timeline">
+                                <div class="bg-timeline-fill" id="bgTimelineFill" style="width:5%"></div>
+                            </div>
+                            <div class="bg-content-row">
+                                <div class="bg-icon-wrap" style="display: none;"><span id="bgMsgIcon">🎤</span></div>
+                                <div class="bg-text-side">
+                                    <div class="bg-era" id="bgMsgEra">ANOS 1970</div>
+                                    <div class="bg-title" id="bgMsgTitle">NASCE O HIP HOP</div>
+                                </div>
+                            </div>
+                            <blockquote class="bg-quote" id="bgMsgQuote"></blockquote>
+                            <p class="bg-author" id="bgMsgAuthor"></p>
+                            <div class="bg-fact" id="bgMsgFact"></div>
+                            <div class="bg-tags" id="bgMsgTags"></div>
+                            <button class="bg-btn-next" id="bgBtnNext">PRÓXIMA FASE →</button>
+                        </div>
+                    </div>
+
+                    <!-- ══ TELA RESULT ══ -->
+                    <div class="bg-screen off" id="bgScreenResult">
+                        <div class="bg-result-banner" id="bgResultBanner">LENDÁRIO!</div>
+                        <div class="bg-grade-wrap">
+                            <div class="bg-grade-circle" id="bgResultGrade">S</div>
+                            <div class="bg-grade-side">
+                                <div class="bg-grade-title" id="bgResultSub">PERFEITO</div>
+                                <div class="bg-grade-sub" id="bgResultDiff">DIFÍCIL</div>
+                            </div>
+                        </div>
+                        <div class="bg-stats-grid">
+                            <div class="bg-stat"><span class="bg-stat-label">Pontos</span><span class="bg-stat-val o"
+                                    id="bgResScore">0</span></div>
+                            <div class="bg-stat"><span class="bg-stat-label">Perfeito</span><span class="bg-stat-val g"
+                                    id="bgResPerfect">0</span></div>
+                            <div class="bg-stat"><span class="bg-stat-label">Bom</span><span class="bg-stat-val c"
+                                    id="bgResGood">0</span></div>
+                            <div class="bg-stat"><span class="bg-stat-label">Erros</span><span class="bg-stat-val p"
+                                    id="bgResMiss">0</span></div>
+                            <div class="bg-stat"><span class="bg-stat-label">Max Combo</span><span class="bg-stat-val o"
+                                    id="bgResCombo">0</span></div>
+                            <div class="bg-stat"><span class="bg-stat-label">Precisão</span><span class="bg-stat-val g"
+                                    id="bgResAcc">0%</span></div>
+                        </div>
+                        <div class="bg-result-btns">
+                            <button class="bg-btn-replay" id="bgBtnReplay">JOGAR DE NOVO</button>
+                            <button class="bg-btn-home" id="bgBtnHome">← INÍCIO</button>
+                        </div>
+                    </div>
+
+                </div><!-- /batida-game-root -->
+            </div><!-- /batida-frame-outer -->
+        </div><!-- /batida-wrapper -->
+
+    </section>
+    <!-- ==================== FIM SEÇÃO BATIDA LIVRE ==================== -->
+
+
+
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer id="redesSociais">
+        <div class="footer-container">
+            <div class="footer-main">
+
+                <!-- Sobre Nós -->
+                <div class="footer-section">
+                    <h3>Sobre Nós</h3>
+                    <p class="about-text">
+                        Vozes da Periferia é um projeto dedicado a transformar vidas através da educação e cultura.
+                        Acreditamos no poder da comunidade e trabalhamos para amplificar as vozes que muitas vezes
+                        não
+                        são ouvidas.
+                    </p>
+                    <p class="about-signature">- Equipe Vozes da Periferia</p>
+
+                    <!-- Parceiro Pão dos Pobres -->
+                    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
+                        <p
+                            style="font-size: 0.75rem; letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.823); margin-bottom: 12px;">
+                            PARCEIRO OFICIAL
+                        </p>
+                        <a href="https://www.instagram.com/fundacaopaodospobres/" target="_blank"
+                            rel="noopener noreferrer"
+                            style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                            <img src="https://estanciadecorrs.com.br/wp-content/uploads/2023/08/Fachada-restaurada-da-Fundacao-Pao-dos-Pobres-credito-Jose-Carlos-Andrade-002-scaled.jpg"
+                                alt="Pão dos Pobres"
+                                style="width: 52px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+                            <div>
+                                <p style="color: #fff; font-weight: 700; font-size: 0.9rem; margin: 0 0 2px;">Pão
+                                    dos
+                                    Pobres</p>
+                                <p
+                                    style="color: rgba(255,255,255,0.45); font-size: 0.78rem; margin: 0; margin-top: 3px;">
+
+                                    Fundação O Pão dos Pobres de Santo Antônio
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="footer-section">
+                    <h3>Conecte-se Conosco</h3>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://www.instagram.com/vozesdaperiferiars" target="_blank"
+                                rel="noopener noreferrer"
+                                style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                                <div class="social-icon instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <span class="social-text">Siga no Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/5551990074346" target="_blank" rel="noopener noreferrer"
+                                style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                                <div class="social-icon whatsapp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <span class="social-text">Fale no WhatsApp</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vozesdaperiferiars@gmail.com"
+                                target="_blank" rel="noopener noreferrer"
+                                style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                                <div class="social-icon email">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span class="social-text">Envie um Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@vozesdaperiferiars" target="_blank"
+                                rel="noopener noreferrer"
+                                style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                                <div class="social-icon youtube">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </div>
+                                <span class="social-text">Assista no YouTube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Localização / Mapa -->
+                <div class="footer-section">
+                    <h3>Nossa Localização</h3>
+                    <div class="map-container-small">
+                        <iframe
+                            src="https://www.google.com/maps?q=Rua+da+República,+801+-+Cidade+Baixa,+Porto+Alegre+-+RS,+90050-320&output=embed"
+                            target="_blank" width="100%" height="100%" style="border:0;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Seção de Copyright -->
+            <div class="footer">
+                <p class="footer-text">© 2026 Vozes da Periferia - Todos os direitos reservados</p>
+                <p class="footer-credits">Dando voz a quem mais precisa ser ouvido.</p>
+            </div>
+        </div>
+
+        <!-- Botão Voltar ao Topo -->
+        <button class="back-to-top-btn" id="backToTopBtn" onclick="scrollToTop()" aria-label="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+            <span>Topo</span>
+        </button>
+
+
+    </footer>
+
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Script customizado -->
+    <script src="meu-script.js"></script>
+
+
+</body>
+
+</html>
